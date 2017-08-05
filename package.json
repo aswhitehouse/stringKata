@@ -1,0 +1,23 @@
+{
+  "name": "stringkata",
+  "version": "1.0.0",
+  "description": "string calculator kata",
+  "main": "calculatorTests.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "dependencies": {
+    "mocha": "3.5.0",
+    "chai": "4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aswhitehouse/stringKata.git"
+  },
+  "author": "aw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aswhitehouse/stringKata/issues"
+  },
+  "homepage": "https://github.com/aswhitehouse/stringKata#readme"
+}
