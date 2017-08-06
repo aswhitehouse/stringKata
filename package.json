@@ -2,13 +2,14 @@
   "name": "stringkata",
   "version": "1.0.0",
   "description": "string calculator kata",
-  "main": "calculatorTests.js",
+  "main": "calculator.js",
   "scripts": {
-    "test": "npm test"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "dependencies": {
-    "mocha": "3.5.0",
-    "chai": "4.1.1"
+    "calculator.js": "^1.0.1",
+    "chai": "4.1.1",
+    "mocha": "3.5.0"
   },
   "repository": {
     "type": "git",
