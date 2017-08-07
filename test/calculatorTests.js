@@ -1,37 +1,37 @@
 var assert = require('assert');
 
-describe('Add Numbers', function() {
-    it('Should take a string as input', function() {
+describe('Add Numbers', () => {
+    it('Should take a string as input', () => {
         typeof input("") === 'string';
     });
 });
 
-describe('Calculate add()', function() {
-    it('Should sum all values', function() {
+describe('Calculate add()', () => {
+    it('Should sum all values', () => {
         var sum = calculate("1,2,3", "+");
         assert.equal(sum, 6);
     });
 });
 
-describe('Calculate subtract()', function() {
-    it('Should subtract all values', function() {
+describe('Calculate subtract()', () => {
+    it('Should subtract all values', () => {
         var result = calculate("5,2", "-");
         assert.equal(result, 3);
     });
 });
 
-describe('Calculate subtract()', function() {
-    it('Should subtract all values into negative', function() {
+describe('Calculate subtract()', () => {
+    it('Should subtract all values into negative', () => {
         var result = calculate("5,2,5", "-");
         assert.equal(result, -2);
     });
 });
 
-function input(value) {
+const input = (value) => {
     return value.split(',');
 }
 
-function calculate(inpVal, operator) {
+const calculate = (inpVal, operator) => {
     var values = input(inpVal);
     if(operator === "+") {
         return add(values);
@@ -41,7 +41,7 @@ function calculate(inpVal, operator) {
     }
 }
 
-function add(inpVal) {
+const add = (inpVal) => {
     var result = 0;
     for(var i = 0; i < inpVal.length; i++) {
         result += parseInt(inpVal[i]);
@@ -49,7 +49,7 @@ function add(inpVal) {
     return result;
 }
 
-function subtract(inpVal) {
+const subtract = (inpVal) => {
     var result = inpVal[0];
     for(var i = 1; i < inpVal.length; i++) {
         result -= parseInt(inpVal[i]);
