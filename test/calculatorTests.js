@@ -2,29 +2,57 @@ var assert = require('assert');
 
 describe('Add Numbers', function() {
     it('Should take a string as input', function() {
-        typeof addNumbers("") === 'string';
+        typeof input("") === 'string';
     });
 });
 
-describe('Add Numbers', function() {
-    it('Should add two numbers', function() {
-        var sum = addNumbers("1,5");
+describe('Calculate add()', function() {
+    it('Should sum all values', function() {
+        var sum = calculate("1,2,3", "+");
         assert.equal(sum, 6);
     });
 });
 
-describe('Add Numbers', function() {
-    it('Should add three numbers in a string', function() {
-        var sum = addNumbers("1,2,3");
-        assert.equal(sum, 6);
+describe('Calculate subtract()', function() {
+    it('Should subtract all values', function() {
+        var result = calculate("5,2", "-");
+        assert.equal(result, 3);
     });
 });
 
-function addNumbers(input) {
-    var values = input.split(',');
-    var sum = 0;
-    for(var i = 0; i < values.length; i++) {
-        sum += parseInt(values[i]);
+describe('Calculate subtract()', function() {
+    it('Should subtract all values into negative', function() {
+        var result = calculate("5,2,5", "-");
+        assert.equal(result, -2);
+    });
+});
+
+function input(value) {
+    return value.split(',');
+}
+
+function calculate(inpVal, operator) {
+    var values = input(inpVal);
+    if(operator === "+") {
+        return add(values);
     }
-    return sum;
+    if(operator === "-") {
+        return subtract(values);
+    }
+}
+
+function add(inpVal) {
+    var result = 0;
+    for(var i = 0; i < inpVal.length; i++) {
+        result += parseInt(inpVal[i]);
+    }
+    return result;
+}
+
+function subtract(inpVal) {
+    var result = inpVal[0];
+    for(var i = 1; i < inpVal.length; i++) {
+        result -= parseInt(inpVal[i]);
+    }
+    return result;
 }
